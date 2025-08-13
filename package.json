@@ -1,0 +1,21 @@
+{
+  "name": "expertsoft",
+  "version": "1.0.0",
+  "description": "API para ExpertSoft con carga de CSV y consultas PostgreSQL",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js"
+  },
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "multer": "^1.4.5-lts.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

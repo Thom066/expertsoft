@@ -3,7 +3,7 @@ import pool from "../db.js";
 
 const router = express.Router();
 
-// 📌 Obtener todos los clientes
+//  Obtener todos los clientes
 router.get("/", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM clients ORDER BY id_client ASC");
@@ -14,7 +14,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// 📌 Obtener un cliente por ID
+//  Obtener un cliente por ID
 router.get("/:id", async (req, res) => {
   try {
     const result = await pool.query("SELECT * FROM clients WHERE id_client = $1", [req.params.id]);
@@ -28,7 +28,7 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// 📌 Crear cliente
+//  Crear cliente
 router.post("/", async (req, res) => {
   try {
     const { identity_number, name_client, address, email, phone } = req.body;
@@ -44,7 +44,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// 📌 Actualizar cliente
+// Actualizar cliente
 router.put("/:id", async (req, res) => {
   try {
     const { identity_number, name_client, address, email, phone } = req.body;
@@ -71,7 +71,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// 📌 Eliminar cliente
+// Eliminar cliente
 router.delete("/:id", async (req, res) => {
   try {
     const result = await pool.query("DELETE FROM clients WHERE id_client = $1 RETURNING *", [req.params.id]);

@@ -70,7 +70,7 @@ Prepared CSV files with the correct structure and column names.
 
 Sent them through Postman using the endpoint:
 
-POST http://localhost:3000/api/import/{tableName}
+POST http://localhost:3000/api/import
 
 Selected form-data in the body and uploaded the CSV file in the file field.
 
